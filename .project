@@ -3,6 +3,7 @@
 	<name>ca-toronto-go-train-android-parser</name>
 	<comment></comment>
 	<projects>
+		<project>MT-Parser</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
