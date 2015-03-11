@@ -2,6 +2,8 @@ package org.mtransit.parser.ca_toronto_go_train;
 
 import org.mtransit.parser.DefaultAgencyTools;
 import org.mtransit.parser.Utils;
+import org.mtransit.parser.gtfs.data.GRoute;
+import org.mtransit.parser.gtfs.data.GStop;
 
 public class TorontoGoTrainAgencyTools extends DefaultAgencyTools{
 	@Override
@@ -11,6 +13,12 @@ public class TorontoGoTrainAgencyTools extends DefaultAgencyTools{
 		super.start(args);
 		System.out.printf("Generating GO train data... DONE in %s.\n",
 				Utils.getPrettyDuration(System.currentTimeMillis() - start));
+	}
+
+	@Override
+	public long getRouteId(GRoute gRoute) {
+		// TODO Auto-generated method stub
+		return Long.parseLong(gRoute.route_id.replaceAll("-", ""));
 	}
 
 	public static void main(String[] args) {
