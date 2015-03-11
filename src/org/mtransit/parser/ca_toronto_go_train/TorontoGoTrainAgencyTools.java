@@ -36,4 +36,9 @@ public class TorontoGoTrainAgencyTools extends DefaultAgencyTools{
 	public String cleanStopName(String gStopName) {
 		return gStopName.replaceAll("GO Station", "");
 	}
+
+	@Override
+	public int getStopId(GStop gStop) {
+		return Integer.parseInt(gStop.stop_id.replaceAll("-", ""));
+	}
 }
