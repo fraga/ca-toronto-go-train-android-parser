@@ -9,6 +9,7 @@ import org.mtransit.parser.Utils;
 import org.mtransit.parser.gtfs.data.GRoute;
 import org.mtransit.parser.gtfs.data.GStop;
 import org.mtransit.parser.gtfs.data.GTrip;
+import org.mtransit.parser.mt.data.MAgency;
 import org.mtransit.parser.mt.data.MRoute;
 import org.mtransit.parser.mt.data.MTrip;
 
@@ -56,6 +57,11 @@ public class TorontoGoTrainAgencyTools extends DefaultAgencyTools{
 	@Override
 	public int getStopId(GStop gStop) {
 		return Integer.parseInt(MatchNumber(gStop.stop_id));
+	}
+
+	@Override
+	public Integer getAgencyRouteType() {
+		return MAgency.ROUTE_TYPE_TRAIN;
 	}
 
 	@Override
